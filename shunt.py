@@ -1,15 +1,12 @@
-#Aaron Burns
-#Shunting Yard Algorithm
-
 def shunt(infix):
     #A dictionary allows setting a higher order of precidences for its items
     #dictionaries are order by strings precidence not an index like an array
     specials= {'*':50, '.': 40, '|': 30}
 
     #return after the infix has been changed to postfix
-    postfix=""
+    postfix=''
     #push and pop operators to this string (push from infix - pop to postfix)
-    stack=""
+    stack=''
 
     for c in infix:
         if c == '(':
@@ -32,10 +29,10 @@ def shunt(infix):
         else:
             postfix = postfix + c
         #anything thats at the end of the stack is added to the postfix and removed from the stack
-        while stack:
-            #postfix = postfix + stack[-1]
-            #stack= stack[:-1]
-            #can do all in one line
-            postfix, stack = postfix + stack[-1], stack[:-1]
+    while stack:
+        #postfix = postfix + stack[-1]
+        #stack= stack[:-1]
+        #can do all in one line
+        postfix, stack = postfix + stack[-1], stack[:-1]
     return postfix
-#print(shunt("(a.b)|(c*.d)"))
+print(shunt("(a.b)|(c*.d)"))
