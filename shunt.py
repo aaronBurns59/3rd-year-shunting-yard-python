@@ -3,7 +3,7 @@
 def shunt(infix):
     #A dictionary allows setting a higher order of precidences for its items
     #dictionaries are order by strings precidence not an index like an array
-    specials= {'*':50, '.': 40, '|': 30}
+    specials= {'*':50, '+':49, '.': 40, '|': 30}
 
     #return after the infix has been changed to postfix
     postfix=''
@@ -42,3 +42,4 @@ print(shunt("A*B.C"))
 print(shunt("A*B.C"))
 print(shunt("A|B*C"))
 print(shunt("A*(B.C)"))
+print(shunt("A*B+C"))
