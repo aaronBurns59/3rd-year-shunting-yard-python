@@ -1,3 +1,5 @@
+#Aaron Burns
+#A program which converts infix notations to postfix notations
 def shunt(infix):
     #A dictionary allows setting a higher order of precidences for its items
     #dictionaries are order by strings precidence not an index like an array
@@ -36,3 +38,7 @@ def shunt(infix):
         postfix, stack = postfix + stack[-1], stack[:-1]
     return postfix
 print(shunt("(a.b)|(c*.d)"))
+print(shunt("A*B.C"))
+print(shunt("A*B.C"))
+print(shunt("A|B*C"))
+print(shunt("A*(B.C)"))
